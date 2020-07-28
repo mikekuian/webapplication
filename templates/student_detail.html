@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Student detail{% endblock %}
+
+{% block content %}
+<div><b>ID: </b>{{ student.id }}</div>
+<div><b>Name: </b>{{ student.name }}</div>
+<div><b>Email: </b>{{ student.email }}</div>
+<div><a class="button" href="/students/{{student.id}}/confirm_delete">Delete this student</a></div>
+<div><a class="button" href="/students/{{student.id}}/student_update">Update this student</a></div>
+{% endblock %}

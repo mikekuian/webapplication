@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Students{% endblock %}
+
+{% block content %}
+<form method="POST">
+    <label for="id">Input student's ID</label>
+    <input id="id" type="text" name="id" value="{{id}}"/>
+    <label for="name">student's name</label>
+    <input id="name" type="text" name="name" value="{{name}}"/>
+    <label for="email">student's email</label>
+    <input id="email" type="text" name="email" value="{{email}}"/>
+    <input type="submit" value="Submit" />
+
+</form>
+
+<table class="table table-striped">
+   <caption>Students</caption>
+   <tr>
+    <th>ID</th>
+    <th>Full Name</th>
+    <th>Email</th>
+   </tr>
+    {% for student in students %}
+    <tr><td><a href="/students/{{ student.id }}">{{ student.id }}</a></td><td>{{ student.name }}</td><td>{{ student.email }}</td></tr>
+    {% endfor %}
+  </table>
+<a href="/">Back Home</a>
+{% endblock %}

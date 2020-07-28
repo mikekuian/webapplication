@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Calculator{% endblock %}
+
+{% block content %}
+<h3>Algebraic operation</h3>
+<form method="POST">
+    <label for="operation"> Choose the operation </label>
+    <p><select id="operation" name="operation">
+    <option value="+" {% if selected == "+" %}selected{% endif %}>Addition</option>
+    <option value="-" {% if selected == "-" %}selected{% endif %}>Subtraction</option>
+    <option value="*" {% if selected == "*" %}selected{% endif %}>Multiplication</option>
+    <option value="/" {% if selected == "/" %}selected{% endif %}>Division</option>
+    </select>
+    </p>
+    <input type="text" name="x" value="{{x}}" />
+    <input type="text" name="y" value="{{y}}" />
+    <p align="justify" > <input class="button" type="submit" value="Calculate it!" /></p>
+
+    </select></p>
+</form>
+
+<h3>Results</h3>
+{{ equation if equation}}
+{{ errors if errors}}
+<div><a href="/">Back Home</a></div>
+{% endblock %}
